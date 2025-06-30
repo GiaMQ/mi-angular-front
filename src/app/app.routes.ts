@@ -9,8 +9,9 @@ import { AdminRoleGuard } from './guards/admin-role.guard';
 import { GuestGuard } from './guards/guest.guard';
 import { IRoleType } from './interfaces';
 import { ProfileComponent } from './pages/profile/profile.component';
-import { categoryComponent } from './pages/category/category.component';
+import { CategoriesComponent } from './pages/category/category.component';
 import { productComponent } from './pages/product/product.component';
+import { DashboardComponent } from './pages/dashboard/dashboard.component';
 
 export const routes: Routes = [
   {
@@ -55,6 +56,19 @@ export const routes: Routes = [
           showInSidebar: true
         }
       },
+       {
+        path: 'dashboard',
+        component: DashboardComponent,
+        data: { 
+          authorities: [
+            IRoleType.admin, 
+            IRoleType.superAdmin,
+            IRoleType.user
+          ],
+          name: 'Dashboard',
+          showInSidebar: true
+        }
+      },
 
       {
         path: 'profile',
@@ -72,7 +86,7 @@ export const routes: Routes = [
 
 {
         path: 'category',
-        component: categoryComponent,
+        component: CategoriesComponent,
         data: { 
           authorities: [
             IRoleType.admin, 
@@ -96,10 +110,6 @@ export const routes: Routes = [
           showInSidebar: true
         }
       }
-
-
-
- 
     ],
   },
 ];

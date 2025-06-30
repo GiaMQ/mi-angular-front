@@ -5,6 +5,8 @@ export interface ILoginResponse {
 
 export interface IResponse<T> {
   data: T;
+  message: string,
+  meta: T;
 }
 
 export interface IUser {
@@ -49,22 +51,6 @@ export interface IRole {
   updatedAt: string;
 }
 
-export interface IGame {
-  id?: number;
-  name?: string;
-  imgURL?: string;
-  status?: string;
-  description?: string;
-  createdAt?: string;
-  updatedAt?: string;
-}
-
-export interface IOrder {
-  id?: number;
-  description?: string;
-  total?: number;
-}
-
 export interface ISearch {
   page?: number;
   size?: number;
@@ -72,4 +58,18 @@ export interface ISearch {
   pageSize?: number;
   totalElements?: number;
   totalPages?:number;
+}
+
+export interface ICategory {
+  id?: string;
+  name?: string;
+  description?: string;
+}
+
+export interface IProduct {
+  id?: number;
+  name?: string;
+  description?: string;
+  price?: number;
+  sockQuantity?: number;
 }
