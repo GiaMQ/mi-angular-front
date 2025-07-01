@@ -10,7 +10,7 @@ import { GuestGuard } from './guards/guest.guard';
 import { IRoleType } from './interfaces';
 import { ProfileComponent } from './pages/profile/profile.component';
 import { CategoriesComponent } from './pages/category/category.component';
-import { productComponent } from './pages/product/product.component';
+import { ProductComponent } from './pages/product/product.component';
 import { DashboardComponent } from './pages/dashboard/dashboard.component';
 
 export const routes: Routes = [
@@ -99,7 +99,7 @@ export const routes: Routes = [
       },
       {
         path: 'products',
-        component: productComponent ,
+        component: ProductComponent ,
         data: { 
           authorities: [
             IRoleType.admin, 
