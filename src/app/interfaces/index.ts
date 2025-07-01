@@ -64,12 +64,15 @@ export interface ICategory {
   id?: string;
   name?: string;
   description?: string;
+  productId?: number; 
 }
 
 export interface IProduct {
-  id?: number;
+  id?: string;
   name?: string;
   description?: string;
   price?: number;
-  sockQuantity?: number;
+  stockQuantity?: number;
+  categoryId?: number; 
+  category?:ICategory;
 }
